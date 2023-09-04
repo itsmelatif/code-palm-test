@@ -1,0 +1,37 @@
+<nav class="navbar">
+  <div class="container flex flex-wrap items-center justify-between w-5/6 mx-auto py-6">
+    <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+      <a class="brand" href="#">Shortly</a>
+    </div>
+
+    <div class="lg:flex flex-grow items-center bg-white pl-12">
+      <ul class="flex flex-col lg:flex-row list-none mr-auto">
+        <li class="flex items-center">
+          <a class="link-main-menu" href="#">
+            Features
+          </a>
+        </li>
+        <li class="flex items-center">
+          <a class="link-main-menu" href="#">
+            Pricing
+          </a>
+        </li>
+        <li class="flex items-center">
+          <a class="link-main-menu" href="#">
+            Resources
+          </a>
+        </li>
+      </ul>
+      <ul class="flex flex-col lg:flex-row list-none lg:ml-auto items-center">
+        <li class="flex items-center">
+          <a class="link-sidemenu" href="#">
+            Login
+          </a>
+        </li>
+        <li class="flex items-center">
+          <lib-button [type]="'rounded'" [label]="'Sign Up'"></lib-button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
