@@ -1,0 +1,19 @@
+.inp {
+  @apply border rounded-[10px] block w-full py-[17px] px-[24px] text-gray-900 text-lg font-poppins font-medium leading-[27px] focus:outline-none;
+}
+
+.inp-primary {
+  @apply focus:border-blue-500;
+}
+
+.inp-danger {
+  @apply border-red-500 focus:border-red-500;
+}
+
+.inp-success {
+  @apply border-emerald-500 focus:border-emerald-500;
+}
+
+.text-danger {
+  @apply font-poppins font-medium text-base text-red-500 pt-1;
+}
