@@ -1,0 +1,10 @@
+<input
+  type="text"
+  id="default-input"
+  [placeholder]="placeholder"
+  [ngClass]="classInput"
+>
+<p class="text-danger" *ngIf="displayTextError">
+  {{ errorText }}
+</p>
+
