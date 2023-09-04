@@ -5,3 +5,5 @@ export enum ITypeInputTextEnum {
   danger = 'danger',
   success = 'success'
 }
+
+export type ITypeButton = 'rounded';
