@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ITypeInputText, ITypeInputTextEnum } from '../models/components.model';
+import { ITypeInputText, ITypeInputTextEnum } from '../../models/components.model';
 
 @Component({
   selector: 'lib-input-text',
