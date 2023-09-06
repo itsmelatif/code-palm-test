@@ -1,0 +1,14 @@
+<ng-container *ngFor="let card of listItems">
+  <div [ngClass]="getClassComponent(card.items.length).container" style="background-color: blue;">
+    <div class="border-desktop"></div>
+    <div class="border-mobile-tablet"></div>
+    <div [ngClass]="getClassComponent(card.items.length).grid">
+      <ng-container *ngFor="let list of card.items; let i = index">
+        <div [ngClass]="getClassCard(i)">
+          <lib-card-icon [item]="list"></lib-card-icon>
+        </div>
+    </ng-container>
+    </div>
+  </div>
+</ng-container>
+
