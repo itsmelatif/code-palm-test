@@ -1,9 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from '../card/card.component';
 import { ButtonComponent } from '../button/button.component';
 import { ICardLink } from '../../models/components.model';
-import { Clipboard } from '@angular/cdk/clipboard';
 
 @Component({
   selector: 'lib-card-link',
@@ -19,8 +18,10 @@ export class CardLinkComponent implements OnInit{
     shortUrl: 'string'
   }
 
+  @Output() copyAction: EventEmitter<string> = new EventEmitter<string>();
+
   constructor(
-    private clipboard: Clipboard
+
   ){
 
   }
@@ -34,7 +35,6 @@ export class CardLinkComponent implements OnInit{
   }
 
   onCopy(){
-
-    this.clipboard.copy(this.data.shortUrl);
+    this.copyAction.emit(this.data.shortUrl);
   }
 }
