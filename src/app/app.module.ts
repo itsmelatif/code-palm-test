@@ -17,6 +17,7 @@ import { CardStepComponent } from 'projects/shortly-lib/src/lib/components/card-
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    MainComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
