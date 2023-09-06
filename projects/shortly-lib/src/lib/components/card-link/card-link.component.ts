@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CardComponent } from '../card/card.component';
 import { ButtonComponent } from '../button/button.component';
 import { ICardLink } from '../../models/components.model';
+import { Clipboard } from '@angular/cdk/clipboard';
 
 @Component({
   selector: 'lib-card-link',
@@ -18,7 +19,9 @@ export class CardLinkComponent implements OnInit{
     shortUrl: 'string'
   }
 
-  constructor(){
+  constructor(
+    private clipboard: Clipboard
+  ){
 
   }
 
@@ -31,6 +34,7 @@ export class CardLinkComponent implements OnInit{
   }
 
   onCopy(){
-    alert('copy');
+
+    this.clipboard.copy(this.data.shortUrl);
   }
 }
