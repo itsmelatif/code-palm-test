@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomePageComponent } from './components/components/home-page.component';
 import { CardStepComponent } from 'projects/shortly-lib/src/lib/components/card-step/card-step.component';
+import { StatisticListComponent } from './components/components/statistic-list/statistic-list.component';
 
 
 @NgModule({
   declarations: [
     HomePageComponent,
+    StatisticListComponent,
   ],
   imports: [
     CommonModule,
