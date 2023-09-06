@@ -8,6 +8,7 @@ import { StatisticListComponent } from './components/statistic-list/statistic-li
 import { ShortLinkComponent } from './components/short-link/short-link.component';
 import { FormShortComponent } from './components/short-link/form-short/form-short.component';
 import { ResultShortComponent } from './components/short-link/result-short/result-short.component';
+import { CardLinkComponent } from 'projects/shortly-lib/src/lib/components/card-link/card-link.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ResultShortComponent } from './components/short-link/result-short/resul
   imports: [
     CommonModule,
     HomeRoutingModule,
-    CardStepComponent
+    CardStepComponent,
+    CardLinkComponent
   ]
 })
 export class HomeModule { }
