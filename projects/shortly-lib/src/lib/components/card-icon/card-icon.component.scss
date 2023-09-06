@@ -1,0 +1,21 @@
+.card {
+  @apply bg-white rounded-lg w-full p-9 shadow-md relative text-center md:text-left;
+  box-shadow: 0px 4px 6px -2px #0000000D;
+  box-shadow: 0px 10px 15px -3px #0000001A;
+}
+
+.container-image {
+  @apply w-full h-20 relative translate-y-[-80px] flex items-center justify-center md:justify-start;
+}
+
+.image {
+  @apply w-20 h-20 bg-zinc-800 rounded-full flex items-center justify-center;
+}
+
+.title {
+  @apply font-poppins font-semibold text-2xl mt-[-55px] leading-[36px] text-gray-900;
+}
+
+.description {
+  @apply font-poppins font-medium text-sm leading-[21px] text-gray-500 pt-[21px];
+}
