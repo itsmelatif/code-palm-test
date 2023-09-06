@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -12,17 +12,17 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 })
 export class SvgImageComponent {
   svgContent!: SafeHtml;
+  @Input() urlPath: string = '';
 
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) {}
 
   ngOnInit() {
-    this.loadSvgFile('projects/shortly-lib/src/lib/assets/images/instagram.svg'); // Adjust the path to your SVG file
+    this.loadSvgFile(this.urlPath);
   }
 
   loadSvgFile(filePath: string) {
     this.http.get(filePath, { responseType: 'text' }).subscribe(
       (data) => {
-        // Sanitize the SVG content
         this.svgContent = this.sanitizer.bypassSecurityTrustHtml(data);
       },
       (error) => {

@@ -20,3 +20,9 @@ export interface ISocialMediaLinks {
   type: 'svg' | 'image';
   path: any;
 }
+
+export interface ICardIcon {
+  pathImage: string;
+  title: string;
+  description: string;
+}
