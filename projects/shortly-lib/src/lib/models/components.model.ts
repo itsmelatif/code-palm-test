@@ -26,3 +26,8 @@ export interface ICardIcon {
   title: string;
   description: string;
 }
+
+export interface ICardLink {
+  rawUrl: string;
+  shortUrl: string;
+}

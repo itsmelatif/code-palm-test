@@ -1,13 +1,13 @@
-<lib-card>
+<lib-card *ngIf="renderComponent()">
   <div class="flex justify-center items-center">
     <div class="flex">
-      <span class="font-poppins font-medium text-black text-xl leading-[30px] pl-5">https://brimvoid.com</span>
+      <span class="font-poppins font-medium text-black text-xl leading-[30px] pl-5">{{ data.rawUrl }}</span>
     </div>
     <div class="ml-auto text-right">
-      <span class="font-poppins font-medium text-teal-500 text-[22px] leading-[33px]">https://re.link/siduia</span>
+      <span class="font-poppins font-medium text-teal-500 text-[22px] leading-[33px]">{{ data.shortUrl }}</span>
     </div>
     <div class="ml-auto">
-      <lib-button label="Copy"></lib-button>
+      <lib-button label="Copy" (click)="onCopy()"></lib-button>
     </div>
   </div>
 </lib-card>
