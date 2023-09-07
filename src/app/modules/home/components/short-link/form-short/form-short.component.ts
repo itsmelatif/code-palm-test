@@ -4,7 +4,9 @@ import { ICardLink, ITypeInputText, ITypeInputTextEnum } from 'projects/shortly-
 import { LinkService } from '../../../services/link.service';
 import { ICommonResonse } from 'src/app/models/interfaces/common-response';
 import { IShortenResponse } from '../../../models/interfaces/shorten-response';
-import { Subscription } from 'rxjs'
+import { Subscription } from 'rxjs';
+import { finalize } from 'rxjs/operators';
+
 @Component({
   selector: 'app-form-short',
   templateUrl: './form-short.component.html',
@@ -13,6 +15,7 @@ import { Subscription } from 'rxjs'
 export class FormShortComponent implements OnInit, OnDestroy {
   form: FormGroup;
   subscription: Subscription[] = [];
+  isLoading = false;
 
   constructor(
     private fb: FormBuilder,
@@ -58,8 +61,15 @@ export class FormShortComponent implements OnInit, OnDestroy {
     }
 
     onShorten(){
+      this.isLoading = true;
       const link = this.form.value.link;
-      const subsShort = this.linkService.shortenUrl(link).subscribe({
+      const subsShort = this.linkService.shortenUrl(link)
+      .pipe(
+        finalize(() => {
+          this.isLoading = false;
+        })
+      )
+      .subscribe({
         next: (res: ICommonResonse<IShortenResponse>) => {
             const item: ICardLink = {
               rawUrl: link,
