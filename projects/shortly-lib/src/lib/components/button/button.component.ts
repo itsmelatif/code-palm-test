@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ITypeButton } from '../../models/components.model';
 
@@ -9,11 +9,17 @@ import { ITypeButton } from '../../models/components.model';
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss']
 })
-export class ButtonComponent {
+export class ButtonComponent implements OnInit, OnChanges {
   @Input() label = '';
   @Input() type: ITypeButton | undefined;
+  @Input() isLoading = false;
+  @Input() fullMobile = false;
 
-  get classButton(){
-    return 'btn '+this.type+ ' is-active-mobile';
+
+  ngOnInit(): void {
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.isLoading = changes['isLoading']?.currentValue;
   }
 }

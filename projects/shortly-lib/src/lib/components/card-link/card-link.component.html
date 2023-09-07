@@ -8,8 +8,13 @@
       <span class="short-link">{{ data.shortUrl }}</span>
     </div>
 
-    <div class="md:col-span-1 flex items-center justify-start px-5 pt-2.5 md:pt-0">
-      <lib-button  label="Copy" (click)="onCopy()" type="is-active-mobile"></lib-button>
+    <div class="md:col-span-1 flex items-center px-5 pt-2.5 md:pt-0">
+        <div class="w-full">
+          <lib-button
+          label="Copy"
+          (click)="onCopy()"
+          [fullMobile]="true"></lib-button>
+        </div>
     </div>
   </div>
 </lib-card>
