@@ -32,14 +32,13 @@ export class ResultShortComponent implements OnInit, OnDestroy {
   onLoadResults(){
     this.isLoading = !this.isLoading;
 
-    const subsResults = this._linkService.listLinks$.pipe(
+    const subsResults = this._linkService.listLinks.pipe(
       finalize(() => {
         this.isLoading = this.isLoading;
       })
     ).subscribe({
       next: (res) => {
-        console.log(res);
-        this.listResults = res;
+        this.listResults = [res, ...this.listResults];
       },
       error: (e) => {
         alert(e)
