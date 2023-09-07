@@ -12,7 +12,7 @@ import { ControlValueAccessor, FormControl, ReactiveFormsModule, NgControl } fro
 })
 export class InputTextComponent implements ControlValueAccessor, OnInit, OnChanges {
   @Input() classText: ITypeInputText = 'primary';
-  @Input() errorText = '';
+  @Input() errorText: string | null = '';
   @Input() placeholder = '';
 
   @Output() changeValue: EventEmitter<string> = new EventEmitter<string>();
