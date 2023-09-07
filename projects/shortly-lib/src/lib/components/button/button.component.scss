@@ -1,13 +1,13 @@
 .btn {
-  @apply text-white bg-teal-400 hover:bg-teal-600 focus:outline-none focus:bg-teal-700 rounded-[10px] py-[16px] px-[36px] font-semibold text-xl leading-[30px] font-poppins flex items-center ;
+  @apply text-white bg-teal-400 hover:bg-teal-600 focus:outline-none focus:bg-teal-700 rounded-[10px] py-[16px] px-[36px] font-semibold text-xl leading-[30px] font-poppins flex items-center justify-center text-center;
 }
 
 .rounded {
   @apply rounded-[40px];
 }
 
-.is-active-mobile {
-
+.full-mobile {
+  @apply w-full sm:w-auto;
 }
 
 .is-not-allowed {
