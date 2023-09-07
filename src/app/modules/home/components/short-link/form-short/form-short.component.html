@@ -11,7 +11,13 @@
         </lib-input-text>
       </div>
       <div class="md:col-span-1">
-        <lib-button class="text-right" label="Shorten it!" type="is-active-mobile" (click)="onShorten()"></lib-button>
+        <lib-button
+          class="text-right"
+          label="Shorten it!"
+          (click)="onShorten()"
+          [fullMobile]="true"
+          [isLoading]="isLoading">
+        </lib-button>
       </div>
     </div>
 
