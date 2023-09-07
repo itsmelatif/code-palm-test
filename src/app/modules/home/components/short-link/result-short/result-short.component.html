@@ -1,5 +1,7 @@
-<p class="font-poppins font-semibold text-gray-400 text-lg leading-[27px] pl-[20px] md:pl-[38px] pb-8">Your links</p>
-<div class="w-full pb-4" *ngFor="let item of listResults">
-  <lib-card-link [data]="item" (copyAction)="onCopy($event)"></lib-card-link>
+<div class="w-full md:w-5/6 mx-auto p-2 md:p-0" *ngIf="listResults.length > 0">
+  <p class="font-poppins font-semibold text-gray-400 text-lg leading-[27px] pl-[20px] md:pl-[38px] pb-8">Your links</p>
+  <div class="w-full pb-4" *ngFor="let item of listResults">
+    <lib-card-link [data]="item" (copyAction)="onCopy($event)"></lib-card-link>
+  </div>
 </div>
 
