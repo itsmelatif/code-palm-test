@@ -13,11 +13,11 @@
         </div>
         <div class="md:col-span-1">
           <lib-button
-            class="text-right"
             label="Shorten it!"
             (click)="onShorten()"
             [fullMobile]="true"
-            [isLoading]="isLoading">
+            [isLoading]="isLoading"
+            [disable]="invalidForm">
           </lib-button>
         </div>
       </div>
