@@ -6,7 +6,7 @@ export enum ITypeInputTextEnum {
   success = 'success'
 }
 
-export type ITypeButton = 'rounded' | 'is-active-mobile';
+export type ITypeButton = 'rounded';
 
 export interface IWidgetFooter {
   title: string;
