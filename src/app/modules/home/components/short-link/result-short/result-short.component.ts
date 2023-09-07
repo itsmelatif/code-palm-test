@@ -4,6 +4,7 @@ import { Clipboard } from '@angular/cdk/clipboard';
 import { LinkService } from '../../../services/link.service';
 import { Subscription } from 'rxjs'
 import { finalize } from 'rxjs/operators';
+import { ComponentsService } from 'projects/shortly-lib/src/lib/services/components.service';
 @Component({
   selector: 'app-result-short',
   templateUrl: './result-short.component.html',
@@ -16,7 +17,8 @@ export class ResultShortComponent implements OnInit, OnDestroy {
 
   constructor(
     private clipboard: Clipboard,
-    private _linkService: LinkService
+    private linkService: LinkService,
+    private componentsService: ComponentsService
   ){
 
   }
@@ -32,7 +34,7 @@ export class ResultShortComponent implements OnInit, OnDestroy {
   onLoadResults(){
     this.isLoading = !this.isLoading;
 
-    const subsResults = this._linkService.listLinks.pipe(
+    const subsResults = this.linkService.listLinks.pipe(
       finalize(() => {
         this.isLoading = this.isLoading;
       })
@@ -50,5 +52,7 @@ export class ResultShortComponent implements OnInit, OnDestroy {
 
   onCopy(data: string){
     this.clipboard.copy(data);
+    const msg = `${data} is coppied`;
+    this.componentsService.showNotifcation(msg);
   }
 }
