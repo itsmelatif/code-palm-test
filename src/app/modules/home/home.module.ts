@@ -12,6 +12,7 @@ import { CardLinkComponent } from 'projects/shortly-lib/src/lib/components/card-
 import { InputTextComponent } from 'projects/shortly-lib/src/lib/components/input-text/input-text.component';
 import { ButtonComponent } from 'projects/shortly-lib/src/lib/components/button/button.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { NotificationComponent } from 'projects/shortly-lib/src/lib/components/notification/notification.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     CardStepComponent,
     CardLinkComponent,
     InputTextComponent,
-    ButtonComponent
+    ButtonComponent,
+    NotificationComponent
   ]
 })
 export class HomeModule { }
