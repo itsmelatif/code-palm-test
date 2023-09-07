@@ -6,7 +6,7 @@ export enum ITypeInputTextEnum {
   success = 'success'
 }
 
-export type ITypeButton = 'rounded';
+export type ITypeButton = 'rounded' | 'is-active-mobile';
 
 export interface IWidgetFooter {
   title: string;
@@ -25,4 +25,9 @@ export interface ICardIcon {
   pathImage: string;
   title: string;
   description: string;
+}
+
+export interface ICardLink {
+  rawUrl: string;
+  shortUrl: string;
 }

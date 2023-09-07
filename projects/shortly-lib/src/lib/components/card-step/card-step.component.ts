@@ -54,7 +54,7 @@ export class CardStepComponent implements OnInit {
     }
 
     return {
-      container: `${classContainer} mx-auto relative flex items-center pt-[44px] mb-16`,
+      container: `${classContainer} mx-auto relative flex items-center pt-[44px]`,
       grid: `grid md:${classGrid} md:gap-7`
     }
   }

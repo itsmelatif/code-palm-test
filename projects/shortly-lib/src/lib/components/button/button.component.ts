@@ -14,6 +14,6 @@ export class ButtonComponent {
   @Input() type: ITypeButton | undefined;
 
   get classButton(){
-    return 'btn '+this.type;
+    return 'btn '+this.type+ ' is-active-mobile';
   }
 }
