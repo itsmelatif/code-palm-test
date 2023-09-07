@@ -13,6 +13,7 @@ import { InputTextComponent } from 'projects/shortly-lib/src/lib/components/inpu
 import { ButtonComponent } from 'projects/shortly-lib/src/lib/components/button/button.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NotificationComponent } from 'projects/shortly-lib/src/lib/components/notification/notification.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { NotificationComponent } from 'projects/shortly-lib/src/lib/components/n
     CardLinkComponent,
     InputTextComponent,
     ButtonComponent,
-    NotificationComponent
+    NotificationComponent,
+    ReactiveFormsModule
   ]
 })
 export class HomeModule { }
