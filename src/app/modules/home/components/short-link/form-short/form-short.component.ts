@@ -6,6 +6,7 @@ import { ICommonResonse } from 'src/app/models/interfaces/common-response';
 import { IShortenResponse } from '../../../models/interfaces/shorten-response';
 import { Subscription } from 'rxjs';
 import { finalize } from 'rxjs/operators';
+import { ValidationHelper } from 'projects/shortly-lib/src/lib/helper/validation';
 
 @Component({
   selector: 'app-form-short',
@@ -22,12 +23,14 @@ export class FormShortComponent implements OnInit, OnDestroy {
     private linkService: LinkService
   ){
     this.form = this.fb.group({
-      link: ['', [Validators.required]]
+      link: ['', [Validators.required, ValidationHelper.validateUrl]]
     })
   }
 
   ngOnInit(): void {
-
+    this.form.controls['link'].valueChanges.subscribe(res => {
+      console.log(res);
+    })
   }
 
   ngOnDestroy(): void {
@@ -35,38 +38,46 @@ export class FormShortComponent implements OnInit, OnDestroy {
   }
 
   onChangeValue(value: string){
-    this.form.patchValue({link: value});
-    console.log(this.form);
+
   }
 
-  get errorForm(): {status: ITypeInputText, msg: string} {
-    if(!this.form.controls['link'].errors){
+  get statusInput(): {status: ITypeInputText, msg: string | null} {
+    if(this.form.controls['link'].valid){
       return {
         status: ITypeInputTextEnum.success,
         msg: ''
       }
     }
 
-    if(this.form.controls['link'].errors['required']){
+    if(this.form.controls['link'].touched && this.form.controls['link'].errors){
       return {
         status: ITypeInputTextEnum.danger,
-        msg: 'This input field is required'
-      }
-    }else{
-      return {
-        status: ITypeInputTextEnum.danger,
-        msg: 'This input field is required'
-      }
+        msg: ValidationHelper.showValidationMsg(this.form.controls['link'])
       }
     }
 
-    onShorten(){
+    return {
+      status: ITypeInputTextEnum.primary,
+      msg: ''
+    }
+  }
+
+  get invalidForm(): boolean {
+    return this.form.invalid;
+  }
+
+  onShorten(){
+      if(this.invalidForm){
+        return;
+      }
+
       this.isLoading = true;
       const link = this.form.value.link;
       const subsShort = this.linkService.shortenUrl(link)
       .pipe(
         finalize(() => {
           this.isLoading = false;
+          this.form.reset();
         })
       )
       .subscribe({
@@ -85,5 +96,5 @@ export class FormShortComponent implements OnInit, OnDestroy {
 
       this.subscription.push(subsShort);
 
-    }
+  }
 }

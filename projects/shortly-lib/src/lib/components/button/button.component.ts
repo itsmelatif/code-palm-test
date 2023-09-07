@@ -14,6 +14,7 @@ export class ButtonComponent implements OnInit, OnChanges {
   @Input() type: ITypeButton | undefined;
   @Input() isLoading = false;
   @Input() fullMobile = false;
+  @Input() disable = false;
 
 
   ngOnInit(): void {
@@ -21,5 +22,6 @@ export class ButtonComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     this.isLoading = changes['isLoading']?.currentValue;
+    this.disable = changes['disable']?.currentValue;
   }
 }
