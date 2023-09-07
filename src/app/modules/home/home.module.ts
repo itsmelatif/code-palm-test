@@ -9,6 +9,9 @@ import { ShortLinkComponent } from './components/short-link/short-link.component
 import { FormShortComponent } from './components/short-link/form-short/form-short.component';
 import { ResultShortComponent } from './components/short-link/result-short/result-short.component';
 import { CardLinkComponent } from 'projects/shortly-lib/src/lib/components/card-link/card-link.component';
+import { InputTextComponent } from 'projects/shortly-lib/src/lib/components/input-text/input-text.component';
+import { ButtonComponent } from 'projects/shortly-lib/src/lib/components/button/button.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 
 @NgModule({
@@ -18,12 +21,15 @@ import { CardLinkComponent } from 'projects/shortly-lib/src/lib/components/card-
     ShortLinkComponent,
     FormShortComponent,
     ResultShortComponent,
+    WelcomeComponent
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
     CardStepComponent,
-    CardLinkComponent
+    CardLinkComponent,
+    InputTextComponent,
+    ButtonComponent
   ]
 })
 export class HomeModule { }
