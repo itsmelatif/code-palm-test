@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ITypeInputText, ITypeInputTextEnum } from '../../models/components.model';
 
@@ -10,13 +10,14 @@ import { ITypeInputText, ITypeInputTextEnum } from '../../models/components.mode
   styleUrls: ['./input-text.component.scss']
 })
 export class InputTextComponent {
-  @Input() type: ITypeInputText = 'primary';
+  @Input() classText: ITypeInputText = 'primary';
   @Input() errorText = '';
-  @Input() placeholder = ''
+  @Input() placeholder = '';
+  @Output() changeValue: EventEmitter<string> = new EventEmitter<string>();
 
   get classInput(): string{
     let label = 'inp inp-';
-    switch(this.type){
+    switch(this.classText){
       case ITypeInputTextEnum.danger:
         return label+ITypeInputTextEnum.danger;
       case ITypeInputTextEnum.success:
@@ -27,6 +28,10 @@ export class InputTextComponent {
   }
 
   get displayTextError(): boolean {
-    return this.type === ITypeInputTextEnum.danger;
+    return this.classText === ITypeInputTextEnum.danger;
+  }
+
+  onInput(value: string){
+    this.changeValue.emit(value);
   }
 }
