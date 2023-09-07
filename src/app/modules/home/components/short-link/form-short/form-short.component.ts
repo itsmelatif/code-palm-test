@@ -27,7 +27,9 @@ export class FormShortComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-
+    this.form.controls['link'].valueChanges.subscribe(res => {
+      console.log(res);
+    })
   }
 
   ngOnDestroy(): void {
@@ -35,30 +37,29 @@ export class FormShortComponent implements OnInit, OnDestroy {
   }
 
   onChangeValue(value: string){
-    this.form.patchValue({link: value});
-    console.log(this.form);
+
   }
 
-  get errorForm(): {status: ITypeInputText, msg: string} {
-    if(!this.form.controls['link'].errors){
+  get statusInput(): {status: ITypeInputText, msg: string} {
+    if(this.form.controls['link'].valid){
       return {
         status: ITypeInputTextEnum.success,
         msg: ''
       }
     }
 
-    if(this.form.controls['link'].errors['required']){
+    if(this.form.controls['link'].touched && this.form.controls['link'].errors && this.form.controls['link'].errors['required']){
       return {
         status: ITypeInputTextEnum.danger,
         msg: 'This input field is required'
-      }
-    }else{
-      return {
-        status: ITypeInputTextEnum.danger,
-        msg: 'This input field is required'
-      }
       }
     }
+
+    return {
+      status: ITypeInputTextEnum.primary,
+      msg: ''
+    }
+  }
 
     onShorten(){
       this.isLoading = true;

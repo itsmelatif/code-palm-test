@@ -1,25 +1,27 @@
 <div class="bg-svg-background w-full md:w-5/6 mx-auto mb-10 px-3 md:px-0">
   <div class="w-full p-5 md:py-[69px] md:pl-[38px] md:pr-[26px] bg-purple-900 rounded-[10px] relative overflow-hidden">
-
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-4 relative z-10">
-      <div class="md:col-span-4">
-        <lib-input-text
-          [classText]="errorForm.status"
-          [errorText]="errorForm.msg"
-          placeholder="Enter you link here"
-          (changeValue)="onChangeValue($event)">
-        </lib-input-text>
+    <form [formGroup]="form">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-4 relative z-10">
+        <div class="md:col-span-4">
+          <lib-input-text
+            [classText]="statusInput.status"
+            [errorText]="statusInput.msg"
+            placeholder="Enter you link here"
+            [formControlName]="'link'"
+            (changeValue)="onChangeValue($event)">
+          </lib-input-text>
+        </div>
+        <div class="md:col-span-1">
+          <lib-button
+            class="text-right"
+            label="Shorten it!"
+            (click)="onShorten()"
+            [fullMobile]="true"
+            [isLoading]="isLoading">
+          </lib-button>
+        </div>
       </div>
-      <div class="md:col-span-1">
-        <lib-button
-          class="text-right"
-          label="Shorten it!"
-          (click)="onShorten()"
-          [fullMobile]="true"
-          [isLoading]="isLoading">
-        </lib-button>
-      </div>
-    </div>
+    </form>
 
     <div class="absolute inset-0">
       <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1152 200" fill="none">
