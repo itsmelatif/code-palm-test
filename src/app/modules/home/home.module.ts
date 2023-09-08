@@ -14,6 +14,7 @@ import { ButtonComponent } from 'projects/shortly-lib/src/lib/components/button/
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NotificationComponent } from 'projects/shortly-lib/src/lib/components/notification/notification.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SvgImageComponent } from 'projects/shortly-lib/src/lib/components/svg-image/svg-image.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     InputTextComponent,
     ButtonComponent,
     NotificationComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SvgImageComponent
   ]
 })
 export class HomeModule { }
