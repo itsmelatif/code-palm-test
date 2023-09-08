@@ -1,0 +1,13 @@
+<input
+  type="text"
+  id="default-input"
+  [placeholder]="placeholder"
+  [ngClass]="classInput"
+  #input
+  (input)="onInput(input.value)"
+  [formControl]="currentFormControl"
+>
+<p class="text-danger" *ngIf="displayTextError">
+  {{ status.msg }}
+</p>
+

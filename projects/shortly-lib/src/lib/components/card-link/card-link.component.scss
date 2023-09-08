@@ -1,0 +1,7 @@
+.raw-link {
+  @apply font-poppins font-medium text-black text-base md:text-xl leading-[30px]
+}
+
+.short-link {
+  @apply font-poppins font-medium text-teal-500 text-lg md:text-[22px] leading-[33px];
+}

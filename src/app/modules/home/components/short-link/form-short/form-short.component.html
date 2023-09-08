@@ -1,0 +1,29 @@
+<div class="bg-svg-background w-full md:w-5/6 mx-auto px-3 md:px-0">
+  <div class="w-full p-5 md:py-[69px] md:pl-[38px] md:pr-[26px] bg-purple-900 rounded-[10px] relative overflow-hidden">
+    <form [formGroup]="form">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-4 relative z-10">
+        <div class="md:col-span-4">
+          <lib-input-text
+            [status]="statusInput"
+            placeholder="{{'shorten_input_placeholder' | translate}}"
+            [formControlName]="'link'"
+            (changeValue)="onChangeValue($event)">
+          </lib-input-text>
+        </div>
+        <div class="md:col-span-1">
+          <lib-button
+            label="{{'shorten_cta' | translate}}"
+            (click)="onShorten()"
+            [fullMobile]="true"
+            [isLoading]="isLoading"
+            [disable]="invalidForm">
+          </lib-button>
+        </div>
+      </div>
+    </form>
+
+    <div class="absolute inset-0">
+      <lib-svg-image [urlPath]="'assets/images/background-form-filter.svg'"></lib-svg-image>
+    </div>
+  </div>
+</div>

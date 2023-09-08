@@ -1,0 +1,7 @@
+.title {
+  @apply font-poppins font-semibold text-[34px] leading-[51px] text-black pt-[74px];
+}
+
+.description {
+  @apply w-full md:w-3/6 mx-auto pb-10 md:pt-[17px] text-lg leading-[27px] text-gray-500 font-medium;
+}

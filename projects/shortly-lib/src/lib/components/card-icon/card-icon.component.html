@@ -1,0 +1,7 @@
+<div class="card" *ngIf="visibleCard">
+  <div class="container-image">
+    <lib-svg-image [urlPath]="item.pathImage" class="image"></lib-svg-image>
+  </div>
+  <h3 class="title">{{ item.title }}</h3>
+  <p class="description">{{ item.description }}</p>
+</div>

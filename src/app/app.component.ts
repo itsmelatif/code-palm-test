@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ICardIcon } from 'projects/shortly-lib/src/lib/models/components.model';
 
 @Component({
   selector: 'app-root',

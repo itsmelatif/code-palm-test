@@ -1,0 +1,27 @@
+<footer id="footer" class="bg-neutral-800">
+  <div class="px-20 py-20 grid grid-col-1 md:grid-cols-4 gap-4 w-full">
+    <div class="grid text-center md:text-left pb-4">
+      <span class="brand-footer">Shortly</span>
+    </div>
+
+    <div class="col-span-1 md:col-span-2 md:pl-6">
+      <div class="grid grid-col-1 md:grid-cols-3 gap-4">
+        <div class="text-center md:text-left">
+          <lib-widget-links [data]="widgetFooterOne"></lib-widget-links>
+        </div>
+
+        <div class="text-center md:text-left">
+          <lib-widget-links [data]="widgetFooterTwo"></lib-widget-links>
+        </div>
+
+        <div class="text-center md:text-left">
+          <lib-widget-links [data]="widgetFooterThree"></lib-widget-links>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center py-3 md:py-0 md:text-right">
+      <lib-socila-media-list [listSocialMedia]="socialMediaLinks"></lib-socila-media-list>
+    </div>
+  </div>
+</footer>

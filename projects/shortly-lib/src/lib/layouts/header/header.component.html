@@ -1,0 +1,76 @@
+<nav class="navbar" [ngClass]="{'is-scroll-down': isScrollingDown}">
+  <div class="bg-white py-3">
+    <div class="flex items-center justify-between w-5/6 mx-auto">
+      <div class="flex items-center space-x-2">
+        <a class="brand" href="#">Shortly</a>
+
+        <ul class="hidden sm:flex list-none flex items-center justify-center">
+          <li class="flex items-center ml-28">
+            <a class="link-main-menu" href="#">
+              {{'menu1' | translate}}
+            </a>
+          </li>
+          <li class="flex items-center">
+            <a class="link-main-menu" href="#">
+              {{'menu2' | translate}}
+            </a>
+          </li>
+          <li class="flex items-center">
+            <a class="link-main-menu" href="#">
+              {{'menu3' | translate}}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="md:flex space-x-4">
+        <ul class="hidden sm:flex list-none flex items-center justify-center">
+          <li class="flex items-center">
+            <a class="link-sidemenu" href="#">
+              {{'menu4' | translate}}
+            </a>
+          </li>
+          <li class="flex items-center">
+            <lib-button [type]="'rounded'" [label]="'menu5' | translate"></lib-button>
+          </li>
+        </ul>
+
+        <div class="lg:hidden">
+          <button type="button" class="relative inline-flex items-center justify-center p-2 text-gray-400 hover:text-white focus:outline-none" aria-controls="mobile-menu" aria-expanded="false" (click)="toggleVisibility()">
+            <span class="absolute -inset-0.5" id="button-show"></span>
+            <span class="sr-only">Open main menu</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M30.4 17.6H1.6C1.17565 17.6 0.768688 17.4314 0.468629 17.1314C0.168571 16.8314 0 16.4243 0 16C0 15.5757 0.168571 15.1687 0.468629 14.8686C0.768688 14.5686 1.17565 14.4 1.6 14.4H30.4C30.8243 14.4 31.2314 14.5686 31.5314 14.8686C31.8314 15.1687 32 15.5757 32 16C32 16.4243 31.8314 16.8314 31.5314 17.1314C31.2314 17.4314 30.8243 17.6 30.4 17.6ZM30.4 6.40001H1.6C1.17565 6.40001 0.768688 6.23144 0.468629 5.93139C0.168571 5.63132 0 5.22436 0 4.80001C0 4.37566 0.168571 3.9687 0.468629 3.66864C0.768688 3.36859 1.17565 3.20001 1.6 3.20001H30.4C30.8243 3.20001 31.2314 3.36859 31.5314 3.66864C31.8314 3.9687 32 4.37566 32 4.80001C32 5.22436 31.8314 5.63132 31.5314 5.93139C31.2314 6.23144 30.8243 6.40001 30.4 6.40001ZM30.4 28.8H1.6C1.17565 28.8 0.768688 28.6314 0.468629 28.3314C0.168571 28.0314 0 27.6243 0 27.2C0 26.7757 0.168571 26.3687 0.468629 26.0687C0.768688 25.7687 1.17565 25.6 1.6 25.6H30.4C30.8243 25.6 31.2314 25.7687 31.5314 26.0687C31.8314 26.3687 32 26.7757 32 27.2C32 27.6243 31.8314 28.0314 31.5314 28.3314C31.2314 28.6314 30.8243 28.8 30.4 28.8Z" fill="black"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="w-5/6 md:hidden m-3 mx-auto bg-gray-800 py-11 rounded-[9px] text-center" *ngIf="isVisible" libClickOutside [exCludeClickID]="'button-show'" (clickOutside)="isClose()" id="dropdown-menu">
+    <ul class="mx-auto">
+      <li class="pb-[25px]">
+        <a href="#" class="link-mobile">{{'menu1' | translate}}</a>
+      </li>
+      <li class="pb-[25px]">
+        <a href="#" class="link-mobile">{{'menu2' | translate}}</a>
+      </li>
+      <li class="pb-[25px]">
+        <a href="#" class="link-mobile">{{'menu3' | translate}}</a>
+      </li>
+    </ul>
+
+    <div class="w-full border border-1 mt-[10px] mb-8 border-solid border-gray-600"></div>
+
+    <ul class="mx-auto">
+      <li class="pb-[25px]">
+        <a href="#" class="link-mobile">{{'menu4' | translate}}</a>
+      </li>
+      <li>
+        <lib-button  [label]="'menu5' | translate" type="rounded"></lib-button>
+      </li>
+    </ul>
+  </div>
+</nav>

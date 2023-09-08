@@ -1,0 +1,19 @@
+<div class="bg-svg-background">
+  <div class="w-full h-[250px] bg-purple-900 relative">
+
+    <div class="text-center flex flex-col justify-center items-center pt-12 relative z-10 overflow-hidden">
+
+      <div class="w-full mx-auto pb-5">
+        <span class="title">
+          {{ "boost_title" | translate}}
+        </span>
+      </div>
+
+      <lib-button label="{{ 'boost_cta' | translate}}" type="rounded"></lib-button>
+    </div>
+
+    <div class="absolute inset-0">
+      <lib-svg-image [urlPath]="'assets/images/background-cta-footer.svg'"></lib-svg-image>
+    </div>
+  </div>
+</div>

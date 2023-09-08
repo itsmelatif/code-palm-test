@@ -1,0 +1,24 @@
+.navbar  {
+  @apply fixed top-0 z-50 w-screen mt-0 md:mt-10;
+}
+
+.is-scroll-down {
+  @apply mt-0
+}
+
+.brand {
+  @apply text-[32px] font-semibold leading-[48px] font-poppins text-gray-800;
+}
+
+.link-main-menu {
+  @apply flex items-center font-poppins text-[20px] leading-[30px] font-medium text-gray-500 px-4;
+}
+
+.link-sidemenu {
+  @apply font-poppins font-semibold text-[16px] leading-[24px] text-base text-gray-500 pr-10;
+}
+
+
+.link-mobile {
+  @apply font-poppins text-white text-[19px] leading-[28.5px] font-semibold;
+}
