@@ -16,17 +16,17 @@ export class StatisticListComponent {
 
     const list = [
       {
-        pathImage: 'assets/images/chart.svg',
+        pathImage: 'assets/images/icon-brand-recognition.svg',
         title: this.translateService.instant('statistic_title_1'),
         description: this.translateService.instant('statistic_desc_1')
       },
       {
-        pathImage: 'assets/images/detail.svg',
+        pathImage: 'assets/images/icon-detailed-records.svg',
         title: this.translateService.instant('statistic_title_2'),
         description: this.translateService.instant('statistic_desc_2')
       },
       {
-        pathImage: 'assets/images/customizible.svg',
+        pathImage: 'assets/images/icon-fully-customizable.svg',
         title: this.translateService.instant('statistic_title_3'),
         description: this.translateService.instant('statistic_desc_3')
       }
