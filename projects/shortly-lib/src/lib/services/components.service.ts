@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 
@@ -8,7 +9,9 @@ export class ComponentsService {
 
   private notification: Subject<string> = new Subject<string>();
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   get getNotification(): Observable<string>{
     return this.notification;
@@ -16,5 +19,9 @@ export class ComponentsService {
 
   showNotifcation(message: string){
     this.notification.next(message);
+  }
+
+  loadSvg(filePath: string): Observable<any> {
+    return this.http.get(filePath, { responseType: 'text' })
   }
 }
