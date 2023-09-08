@@ -15,7 +15,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { NotificationComponent } from 'projects/shortly-lib/src/lib/components/notification/notification.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SvgImageComponent } from 'projects/shortly-lib/src/lib/components/svg-image/svg-image.component';
-
+import { TranslateModule } from "@ngx-translate/core";
 
 @NgModule({
   declarations: [
@@ -35,7 +35,8 @@ import { SvgImageComponent } from 'projects/shortly-lib/src/lib/components/svg-i
     ButtonComponent,
     NotificationComponent,
     ReactiveFormsModule,
-    SvgImageComponent
+    SvgImageComponent,
+    TranslateModule
   ]
 })
 export class HomeModule { }

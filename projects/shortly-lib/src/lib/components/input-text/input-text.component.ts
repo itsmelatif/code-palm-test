@@ -11,8 +11,10 @@ import { ControlValueAccessor, FormControl, ReactiveFormsModule, NgControl } fro
   styleUrls: ['./input-text.component.scss']
 })
 export class InputTextComponent implements ControlValueAccessor, OnInit, OnChanges {
-  @Input() classText: ITypeInputText = 'primary';
-  @Input() errorText: string | null = '';
+  @Input() status: { classInp: ITypeInputText, msg: string | null } = {
+    classInp: ITypeInputTextEnum. primary, msg: ''
+  };
+
   @Input() placeholder = '';
 
   @Output() changeValue: EventEmitter<string> = new EventEmitter<string>();
@@ -31,8 +33,7 @@ export class InputTextComponent implements ControlValueAccessor, OnInit, OnChang
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.classText = changes['classText']?.currentValue;
-    this.errorText = changes['errorText']?.currentValue;
+    this.status = changes['status']?.currentValue;
   }
 
   writeValue(value: string | string[]): void {
@@ -54,7 +55,7 @@ export class InputTextComponent implements ControlValueAccessor, OnInit, OnChang
 
   get classInput(): string{
     let label = 'inp inp-';
-    switch(this.classText){
+    switch(this.status.classInp){
       case ITypeInputTextEnum.danger:
         return label+ITypeInputTextEnum.danger;
       case ITypeInputTextEnum.success:
@@ -65,7 +66,7 @@ export class InputTextComponent implements ControlValueAccessor, OnInit, OnChang
   }
 
   get displayTextError(): boolean {
-    return this.classText === ITypeInputTextEnum.danger;
+    return this.status.classInp === ITypeInputTextEnum.danger;
   }
 
   onInput(value: string){

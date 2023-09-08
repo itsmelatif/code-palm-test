@@ -1,0 +1,7 @@
+.title {
+  @apply font-poppins font-bold text-gray-800 text-[42px] md:text-[64px] leading-[45.15px] md:leading-[68.8px];
+}
+
+.description {
+  @apply font-poppins font-medium text-gray-500 text-xl leading-[30px] pt-4 pb-7;
+}

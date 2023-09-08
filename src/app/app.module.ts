@@ -3,11 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule, HttpClient } from '@angular/common/http';
 import { MainComponent } from 'projects/shortly-lib/src/lib/layouts/main/main.component';
 import { CoreInterceptor } from './cores/interceptors/core.interceptor';
-import { ReactiveFormsModule } from '@angular/forms';
-
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateService } from "@ngx-translate/core";
 @NgModule({
   declarations: [
     AppComponent
@@ -16,7 +17,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MainComponent
+    MainComponent,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpTranslateLoader,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     {
@@ -27,4 +35,15 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(private translate: TranslateService) {
+    this.translate.addLangs(['en']);
+    this.translate.setDefaultLang('en');
+  }
+
+}
+
+export function httpTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}

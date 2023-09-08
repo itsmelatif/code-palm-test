@@ -55,7 +55,7 @@ export class NotificationComponent implements OnInit, OnDestroy {
 
       },
       complete: () => {
-        console.log('res');
+
       }
     })
 
