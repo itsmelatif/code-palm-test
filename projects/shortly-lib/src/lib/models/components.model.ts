@@ -17,6 +17,7 @@ export interface IWidgetFooter {
 };
 
 export interface ISocialMediaLinks {
+  url: string;
   type: 'svg' | 'image';
   path: any;
 }

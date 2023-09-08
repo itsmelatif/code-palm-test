@@ -42,7 +42,10 @@ export class FooterComponent {
   };
 
   socialMediaLinks: ISocialMediaLinks[] = [
-    { type: 'svg', path: '' }
+    { url: '#', type: 'svg', path: 'assets/images/icon-instagram.svg' },
+    { url: '#', type: 'svg', path: 'assets/images/icon-pinterest.svg' },
+    { url: '#', type: 'svg', path: 'assets/images/icon-twitter.svg' },
+    { url: '#', type: 'svg', path: 'assets/images/icon-facebook.svg' },
   ]
 
 }
