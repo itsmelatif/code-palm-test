@@ -1,6 +1,6 @@
 <button
   class="btn {{ this.type }}"
-  [ngClass]="{'full-mobile': fullMobile, 'is-not-allowed': isLoading || disable}"
+  [ngClass]="{'full-mobile': fullMobile, 'is-not-allowed': isLoading || disable, 'is-loading': isLoading}"
   [disabled]="isLoading || disable"
 >
   <ng-container *ngIf="isLoading; else notLoading">
