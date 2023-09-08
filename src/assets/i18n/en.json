@@ -1,0 +1,30 @@
+{
+  "menu1": "Features",
+  "menu2": "Pricing",
+  "menu3": "Resources",
+  "menu4": "Login",
+  "menu5": "Sign Up",
+  "welcome_title": "More than just shorter links",
+  "welcome_desc": "Build your brand’s recognition and get detailed insights on how your links are performing.",
+  "wecome_cta": "Get Started",
+  "shorten_input_placeholder": "Enter you link here",
+  "required_input_err": "This input field is required",
+  "invalid_input_url": "This is not valid url",
+  "shorten_cta": "Shorten it!",
+  "statistic_title": "Advanced Statistics",
+  "statistic_desc": "Track how your links are performing across the web with our advanced statistics dashboard.",
+  "shorten_result_title": "Your Links",
+  "copy_cta": "Copy",
+
+  "statistic_title_1": "Brand Recognition",
+  "statistic_desc_1": "Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.",
+
+  "statistic_title_2": "Detailed Records",
+  "statistic_desc_2": "Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.",
+
+  "statistic_title_3": "Fully Customizable",
+  "statistic_desc_3": "Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.",
+
+  "boost_title": "Boost your links today",
+  "boost_cta": "Get Started"
+}
