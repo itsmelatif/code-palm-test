@@ -1,6 +1,11 @@
 .navbar  {
-  @apply fixed top-0 z-50 w-screen mt-0 md:mt-10 py-3;
+  @apply fixed top-0 z-50 w-screen mt-0 md:mt-10;
 }
+
+.is-scroll-down {
+  @apply mt-0
+}
+
 .brand {
   @apply text-[32px] font-semibold leading-[48px] font-poppins text-gray-800;
 }

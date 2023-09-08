@@ -1,5 +1,5 @@
-<nav class="navbar">
-  <div class="bg-white">
+<nav class="navbar" [ngClass]="{'is-scroll-down': isScrollingDown}">
+  <div class="bg-white py-3">
     <div class="flex items-center justify-between w-5/6 mx-auto">
       <div class="flex items-center space-x-2">
         <a class="brand" href="#">Shortly</a>
