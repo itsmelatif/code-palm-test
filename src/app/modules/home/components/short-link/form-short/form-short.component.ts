@@ -90,7 +90,7 @@ export class FormShortComponent implements OnInit, OnDestroy {
             this.linkService.updateLinks(item);
         },
         error: (e) => {
-          alert(e)
+          alert(e.error.error)
         }
       });
 
