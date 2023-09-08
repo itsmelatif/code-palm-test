@@ -1,5 +1,5 @@
 .navbar  {
-  @apply top-0 absolute z-50 w-full flex flex-wrap items-center justify-between
+  @apply fixed top-0 z-50 w-screen mt-0 md:mt-10 py-3;
 }
 .brand {
   @apply text-[32px] font-semibold leading-[48px] font-poppins text-gray-800;
@@ -11,4 +11,9 @@
 
 .link-sidemenu {
   @apply font-semibold text-[16px] text-base text-gray-500 pr-10;
+}
+
+
+.link-mobile {
+  @apply font-poppins text-white text-[19px] leading-[28.5px] font-semibold;
 }
