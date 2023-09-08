@@ -15,7 +15,7 @@ export class CoreInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
-    if (request.url.startsWith('assets')) {
+    if (request.url.startsWith('assets') || request.url.startsWith('/assets')) {
       return next.handle(request);
     }
 

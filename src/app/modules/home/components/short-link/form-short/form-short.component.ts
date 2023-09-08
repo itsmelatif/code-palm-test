@@ -7,6 +7,7 @@ import { IShortenResponse } from '../../../models/interfaces/shorten-response';
 import { Subscription } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { ValidationHelper } from 'projects/shortly-lib/src/lib/helper/validation';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-form-short',
@@ -20,7 +21,8 @@ export class FormShortComponent implements OnInit, OnDestroy {
 
   constructor(
     private fb: FormBuilder,
-    private linkService: LinkService
+    private linkService: LinkService,
+    private translateService: TranslateService
   ){
     this.form = this.fb.group({
       link: ['', [Validators.required, ValidationHelper.validateUrl]]
@@ -28,9 +30,7 @@ export class FormShortComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.form.controls['link'].valueChanges.subscribe(res => {
-      console.log(res);
-    })
+
   }
 
   ngOnDestroy(): void {
@@ -41,23 +41,23 @@ export class FormShortComponent implements OnInit, OnDestroy {
 
   }
 
-  get statusInput(): {status: ITypeInputText, msg: string | null} {
+  get statusInput(): {classInp: ITypeInputText, msg: string | null} {
     if(this.form.controls['link'].valid){
       return {
-        status: ITypeInputTextEnum.success,
+        classInp: ITypeInputTextEnum.success,
         msg: ''
       }
     }
 
     if(this.form.controls['link'].touched && this.form.controls['link'].errors){
       return {
-        status: ITypeInputTextEnum.danger,
-        msg: ValidationHelper.showValidationMsg(this.form.controls['link'])
+        classInp: ITypeInputTextEnum.danger,
+        msg: ValidationHelper.showValidationMsg(this.form.controls['link'], this.translateService)
       }
     }
 
     return {
-      status: ITypeInputTextEnum.primary,
+      classInp: ITypeInputTextEnum.primary,
       msg: ''
     }
   }

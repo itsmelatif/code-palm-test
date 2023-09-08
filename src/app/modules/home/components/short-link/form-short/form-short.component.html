@@ -4,16 +4,15 @@
       <div class="grid grid-cols-1 md:grid-cols-5 gap-4 relative z-10">
         <div class="md:col-span-4">
           <lib-input-text
-            [classText]="statusInput.status"
-            [errorText]="statusInput.msg"
-            placeholder="Enter you link here"
+            [status]="statusInput"
+            placeholder="{{'shorten_input_placeholder' | translate}}"
             [formControlName]="'link'"
             (changeValue)="onChangeValue($event)">
           </lib-input-text>
         </div>
         <div class="md:col-span-1">
           <lib-button
-            label="Shorten it!"
+            label="{{'shorten_cta' | translate}}"
             (click)="onShorten()"
             [fullMobile]="true"
             [isLoading]="isLoading"

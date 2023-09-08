@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { CardComponent } from '../card/card.component';
 import { ButtonComponent } from '../button/button.component';
 import { ICardLink } from '../../models/components.model';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'lib-card-link',
   standalone: true,
-  imports: [CommonModule, CardComponent, ButtonComponent],
+  imports: [CommonModule, TranslateModule, CardComponent, ButtonComponent],
   templateUrl: './card-link.component.html',
   styleUrls: ['./card-link.component.scss']
 })

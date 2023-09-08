@@ -15,7 +15,6 @@ export class ComponentsService {
   }
 
   showNotifcation(message: string){
-    console.log(message);
     this.notification.next(message);
   }
 }
